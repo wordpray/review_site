@@ -9,7 +9,14 @@ before_action :authenticate_user!,only: :new
   def create
     Review.create(create_params)
     redirect_to controller: :products,action: :index
+  end
 
+  def destroy
+    review = Review.find(params[:id])
+    if review.user_id == current_user.id
+      review.destroy
+    end
+    redirect_to controller: :products,action: :index
   end
 
   private

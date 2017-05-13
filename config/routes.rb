@@ -2,7 +2,7 @@ TechReviewSite::Application.routes.draw do
   devise_for :users
   resources :users, only: :show
   resources :products, only: :show do
-    resources :reviews,only: [:new, :create]
+    resources :reviews,only: [:new, :create,:destroy]
     collection do
       get 'search'
     end

@@ -37,10 +37,15 @@
                       <%= review.review %>
                     </p>
                   </div>
+                  <!-- 削除機能追加 -->
+                  <% if user_signed_in? && current_user.id == review.user_id %>
+                      <p class="text-small" style="float: right">
+                      <%= link_to '削除',"/products/#{review.product_id}/reviews/#{review.id}", method: :delete %>
+                      </p>
+                  <% end %>
                 </li>
                 <% end %>
               </ul>
-
             </div>
           </article>
           <%= paginate(@product2) %>
