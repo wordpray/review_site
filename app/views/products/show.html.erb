@@ -22,7 +22,7 @@
                 </h2>
               </header>
               <ul style="padding: 0">
-              <% @product.reviews.each do |review| %>
+              <% @product2.each do |review| %>
                 <li style="border-bottom: dotted 1px">
                   <div class="thumbnail__caption">
                     <h3 class="text-xsmall text-overflow" title="<% review.user.nickname %>">
@@ -40,7 +40,9 @@
                 </li>
                 <% end %>
               </ul>
+
             </div>
           </article>
+          <%= paginate(@product2) %>
         </div>
         <div id="yjSub">
