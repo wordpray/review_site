@@ -25474,3 +25474,24 @@ You can opt into the new behavior and remove this warning by setting:
   [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`user_id` = 1
   [1m[36mReview Load (0.5ms)[0m  [1mSELECT  `reviews`.* FROM `reviews` WHERE `reviews`.`id` = 1 LIMIT 1[0m
   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/yoshi/projects/darts/app/models/user.rb:7)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/yoshi/projects/darts/app/models/user.rb:7)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/yoshi/projects/darts/app/models/user.rb:7)
