@@ -19,21 +19,17 @@
                 <a href="/">DARTS.com</a>
               </li>
 
-              <% if user_signed_in? %>
-                <!-- マイページ実装のため削除-->
+                <% if user_signed_in? %>
+                  <li class="entry_button" style="float: right">
+                    <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
+                  </li>
+                  <li class="entry_button" style="float: right">
+                    <a href="/users/<%= current_user.id %>">マイページ</a>
+                  </li>
                 <% else %>
                   <li class="entry_button" style="float: right">
-                  <%= link_to 'サインイン',"/users/sign_in",method: :get %>
+                  <%= link_to 'サインイン',"/users/sign_in",method: :get %></li>
                 <% end %>
-
-                <% if user_signed_in? %>
-                <li class="entry_button" style="float: right">
-                  <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
-                </li>
-                <li class="entry_button" style="float: right">
-                  <a href="/users/<%= current_user.id %>">マイページ</a>
-                </li>
-              <% end %>
 
               <li class="entry_button" style="float: right">
                 <a href="/products/search">投稿する</a>
