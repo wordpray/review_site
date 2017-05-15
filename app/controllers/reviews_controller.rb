@@ -16,7 +16,8 @@ before_action :authenticate_user!,only: :new
     if review.user_id == current_user.id
       review.destroy
     end
-    redirect_to controller: :products,action: :index
+    redirect_to :back
+    #redirect_to controller: :products,action: :index
   end
 
   private
