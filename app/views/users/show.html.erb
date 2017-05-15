@@ -25,6 +25,9 @@
                 <p class="text-small" style="float: right">
                 <%= link_to '削除',"/products/#{review.product_id}/reviews/#{review.id}", method: :delete %>
                 </p>
+                <p class="text-small" style="float: right">
+                <%= link_to '編集',"/products/#{review.product_id}/reviews/#{review.id}/edit", method: :get %>
+                </p>
             <% end %>
           </li>
           <% end %>

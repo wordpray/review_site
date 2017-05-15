@@ -7,8 +7,23 @@ before_action :authenticate_user!,only: :new
   end
 
   def create
-    Review.create(create_params)
-    redirect_to controller: :products,action: :index
+    @review = Review.create(create_params)
+    redirect_to "/products/#{@review.product_id}"
+    #redirect_to controller: :products,action: :index
+  end
+
+  def edit
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
+  end
+
+  def update
+      @review = Review.find(params[:id])
+       if @review.user_id == current_user.id
+        @review.update(create_params)
+      end
+      redirect_to "/products/#{@review.product_id}"
+      # redirect_to controller: :products,action: :index
   end
 
   def destroy
