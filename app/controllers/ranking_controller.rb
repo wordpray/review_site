@@ -39,7 +39,7 @@ class RankingController < ApplicationController
 
     last_answer.sort_by{|k,v| v }
     
-    binding.pry
+    # binding.pry
 
     # 以下最後にaveの順に並び替えてそのハッシュの配列からpro_idの情報だけを上から５個取り出して配列にする。そして最後にReview〜みたいな形でデータを取り出す。
 
